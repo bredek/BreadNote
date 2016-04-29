@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300,200,100' rel='stylesheet' type='text/css'>
+  <!-- css styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Task generator</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+        <!-- <p>Lest's click the button to add some tasks</p> -->
+        <div class="intro-description">
+          <h1>Simple task list</h1>
+          <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad illum in, delectus modi laboriosam itaque ipsam cum nobis sunt laborum.</p>
+        </div>
+        <div class="new-task">
+          <div class="new-task-overlay">
+            <form class="task-form">
+              <div class="form-field">
+                <label for="taskName">Enter your task name</label>
+                <input id="taskName" required>
+              </div>
+              <div class="form-field">
+                <label for="taskDeadline">Enter your deadline</label>
+                <input id="taskDeadline" required>
+              </div>
+              <div class="form-field">
+                <label for="taskDescription">Enter your task description</label>
+                <textarea id="taskDescription" required></textarea>
+              </div>
+              <button class="getTask">Click here</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- libraries -->
+  <script src="lib/dominator.js"></script>
+  <!-- scripts -->
+  <script src="js/taskApp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  padding: 10px;
+}
+
+
+/* new task overlay */
+/*.new-task-overlay{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background: rgba(155,140,100, .8);
+}*/
+
+
+textarea,
+input {
+  font-weight: 500;
+  width: 100%;
+
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+textarea:focus, 
+input:focus{
+    outline: none;
+}
+
+.task-form{
+	margin: 40px 0;
+}
+
+.task-form .form-field {
+  margin-bottom: 20px;
+}
+
+.task-form .form-field > label {
+  font-weight: 500;
+}
+
+.task-form .form-field > #taskDescription {
+  min-height: 200px;
+	resize: none
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #6E9A6E;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  /*background: none;*/
+}
+
+button:hover {
+  background-color: #6E9A6E;
+}
+
+
