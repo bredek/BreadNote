@@ -37,4 +37,5 @@ taskButton.onclick = function(evt) {
   console.log(taskDescription);
 
   createTask(taskTitle, taskDeadline, taskDescription);
+  dominator.clearAll();
 }
