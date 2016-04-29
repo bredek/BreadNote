@@ -26,19 +26,20 @@
         </div>
         <div class="new-task">
           <div class="new-task-overlay">
-            <form class="task-form">
+            <form class="task-form" action="saveJSON.php" method="POST">
               <div class="form-field">
                 <label for="taskName">Enter your task name</label>
-                <input type="text" id="taskName" required>
+                <input type="text" name="taskTitle" id="taskName" required>
               </div>
               <div class="form-field">
                 <label for="taskDeadline">Enter your deadline</label>
-                <input type="text" id="taskDeadline" required>
+                <input type="text" name="taskDeadline" id="taskDeadline" required>
               </div>
               <div class="form-field">
                 <label for="taskDescription">Enter your task description</label>
-                <textarea id="taskDescription" required></textarea>
+                <textarea id="taskDescription" name="taskDescription" required></textarea>
               </div>
+              <input type="submit" value="Submit">
               <button class="getTask">Click here</button>
             </form>
           </div>

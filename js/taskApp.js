@@ -28,7 +28,7 @@ function createTask(title, deadline, shortDescription) {
 
 var taskButton = document.querySelector(".getTask");
 taskButton.onclick = function(evt) {
-  evt.preventDefault();
+  // evt.preventDefault();
   var taskTitle = document.getElementById('taskName').value;
   console.log(taskTitle);
   var taskDeadline = document.getElementById('taskDeadline').value;
