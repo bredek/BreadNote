@@ -1,16 +1,15 @@
 <?php
    
-   $myFile = "data/tasks.json";
+   $myFile = "data.json";
    $arr_data = array(); // create empty array
 
   try
   {
 	   //Get form data
 	   $formdata = array(
-	      'title'=> $_POST['taskTitle'],
-	      'deadline'=> $_POST['taskDeadline'],
-	      'description'=>$_POST['taskDescription']
-	      // 'mobile'=> $_POST['mobile']
+	      'taskTitle'=> $_POST['taskTitle'],
+	      'taskDeadline'=> $_POST['taskDeadline'],
+	      'taskDescription'=>$_POST['taskDescription']
 	   );
 
 	   //Get data from existing json file

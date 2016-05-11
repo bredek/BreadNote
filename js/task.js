@@ -8,6 +8,5 @@ Task.prototype.toString = function(){
 	return "Task info: " + this.tite + " " + this.deadline + " " + this.description;
 }
 
-// создать кофеварку
 var newTask = new Task('This is title', "Deadline", "Short description");
 console.log(newTask);

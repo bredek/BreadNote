@@ -10,14 +10,23 @@ body {
 
 
 /* new task overlay */
-/*.new-task-overlay{
+.new-task-overlay{
 	display: none;
 	position: fixed;
+  width: 100%;
+  height: 100%;
 	top: 0;
 	left: 0;
 	z-index: 100;
-	background: rgba(155,140,100, .8);
-}*/
+	background: rgba(0,0,0, .6);
+}
+
+.task-container{
+  width: 500px;
+  margin:0 auto;
+
+  background: #fff;
+}
 
 
 textarea,
@@ -35,7 +44,8 @@ input:focus{
 }
 
 .task-form{
-	margin: 40px 0;
+	margin: 60px 0;
+  padding: 30px;
 }
 
 .task-form .form-field {
@@ -51,7 +61,9 @@ input:focus{
 	resize: none
 }
 
-button {
+button{
+  /*display: block;*/
+  /*width: 120px;*/
   padding: 10px 20px;
   border: none;
   background-color: #6E9A6E;
@@ -68,4 +80,12 @@ button:hover {
   background-color: #6E9A6E;
 }
 
+.warning{
+  display: none;
+  color: red;
+  text-align: center;
+  font-weight: 800;
+
+  padding: 10px 20px;
+}
 
