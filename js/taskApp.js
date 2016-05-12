@@ -1,56 +1,52 @@
 function createTask(title, deadline, shortDescription) {
-  // let's check the input
-  console.log(!!(title));
-  console.log(!!(deadline));
-  console.log(!!(shortDescription));
+  var newTask = dominator.create("div");
+  var taskTitle = dominator.create("h2")
+  var taskDeadline = dominator.create("time")
+  var taskDescription = dominator.create("p");
 
-  if (!!(title) && !!(deadline) && !!(shortDescription)) {
-    var newTask = dominator.create("div");
-    var taskTitle = dominator.create("h2")
-    var taskDeadline = dominator.create("time")
-    var taskDescription = dominator.create("p");
+  // set description
+  dominator.text(taskDeadline, "Deadline: " + deadline);
+  dominator.text(taskTitle, title);
+  dominator.text(taskDescription, "To-Do: " + shortDescription);
 
-    // set description
-    dominator.text(taskDeadline, "Deadline: " + deadline);
-    dominator.text(taskTitle, title);
-    dominator.text(taskDescription, "To-Do: " + shortDescription);
+  // adding created element to the document
+  dominator.add(newTask, taskTitle);
+  dominator.add(newTask, taskDeadline);
+  dominator.add(newTask, taskDescription);
 
-    // adding created element to the document
-    dominator.add(newTask, taskTitle);
-    dominator.add(newTask, taskDeadline);
-    dominator.add(newTask, taskDescription);
+  // get task list to add task at the end
+  var taskList = dominator.get(".task-list");
+  dominator.add(taskList, newTask);
+}
 
-    // get task list to add task at the end
-    var taskList = dominator.get(".task-list");
+function init() {
+  var taskButton = dominator.get(".getTask");
+  taskButton.onclick = function(evt) {
+    // debugger;
+    evt.preventDefault();
+    if (dominator.validate(".task-form")) {
+      var taskTitle = dominator.getValue('#taskName');
+      var taskDeadline = dominator.getValue('#taskDeadline');
+      var taskDescription = dominator.getValue('#taskDescription');
 
-    dominator.add(taskList, newTask);
-  } else {
-    // error message
-    var sp2 = dominator.get(".task-form");
-    var sp1 = dominator.create("p");
-    sp1.className += "warning";
-    dominator.text(sp1, "There's an input error!");
-    sp2.insertBefore(sp1, sp2.firstElementChild);
-    $(sp1).slideDown(300).delay(2000).slideUp(300);
-    // alert("OH SHIT! THERE'S SOMETHING WRONG WITH THE INPUT!");
+      createTask(taskTitle, taskDeadline, taskDescription);
+
+      $(".new-task-overlay").fadeOut(300);
+      // clear the input
+      dominator.clearAll();
+    }
   }
+
+  $("#addTask").click(function() {
+    $(".new-task-overlay").fadeIn(300);
+  });
+
+  $(".cancelTask").click(function(e) {
+    e.preventDefault();
+    $(".new-task-overlay").fadeOut(300);
+    // clear the input
+    dominator.clearAll();
+  });
 }
 
-var taskButton = document.querySelector(".getTask");
-taskButton.onclick = function(evt) {
-  evt.preventDefault();
-  var taskTitle = document.getElementById('taskName').value;
-  console.log(taskTitle);
-  var taskDeadline = document.getElementById('taskDeadline').value;
-  console.log(taskDeadline);
-  var taskDescription = document.getElementById('taskDescription').value;
-  console.log(taskDescription);
-
-  createTask(taskTitle, taskDeadline, taskDescription);
-  // $(".new-task-overlay").hide();
-  dominator.clearAll();
-}
-
-$("#addTask").click(function() {
-  $(".new-task-overlay").fadeIn(300);
-});
+init();
